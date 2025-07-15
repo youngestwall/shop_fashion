@@ -311,7 +311,7 @@ Dự án này được phân phối dưới MIT License. Xem `LICENSE` để bi�
 - **📧 Email**: phainie03@gmail.com
 - **💻 GitHub**: [@youngestwall](https://github.com/youngestwall)
 - **🔗 Repository**: [shop_fashion](https://github.com/youngestwall/shop_fashion)
-- **🌐 LinkedIn**: [Phai Nguyen](https://www.linkedin.com/in/ypn-phai-351079294/)
+- **🌐 LinkedIn**: [Phai Nie](https://www.linkedin.com/in/youngestwall/)
 - **📱 Phone/Zalo**: *+84 xxx xxx xxx
 
 ### 💬 Hỗ trợ và phản hồi
