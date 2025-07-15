@@ -211,6 +211,78 @@ npm run eject       # Eject from Create React App
 2. Kiểm tra MongoDB có dữ liệu admin không
 3. Chạy script tạo admin: `node backend/utils/createAdmin.js`
 
+## 🚀 Khởi động lại toàn bộ dự án
+
+Nếu gặp vấn đề, hãy thực hiện các bước sau để khởi động lại hoàn toàn:
+
+### **Bước 1: Dọn dẹp các tiến trình cũ**
+```powershell
+Get-Process node -ErrorAction SilentlyContinue | Stop-Process -Force
+```
+
+### **Bước 2: Kiểm tra thư mục dự án**
+Đảm bảo bạn đang ở đúng thư mục dự án `shop_fashion`
+
+### **Bước 3: Khởi động Backend (Cổng 5000)**
+```powershell
+cd "your_project_path\shop_fashion\backend"
+npm run dev
+```
+*Đợi một chút để backend khởi động...* ⏳
+
+✅ **Backend đã khởi động thành công!**
+
+### **Bước 4: Khởi động Frontend (Cổng 3000)**
+```powershell
+cd "your_project_path\shop_fashion\frontend"
+npm start
+```
+*Đợi frontend compile...* ⏳
+
+✅ **Frontend đã compile và sẵn sàng!**
+
+### **Bước 5: Kiểm tra API Backend**
+```powershell
+Start-Sleep -Seconds 3
+Invoke-WebRequest -Uri "http://localhost:5000/api/health-check" -Method GET
+```
+✅ **API Backend hoạt động tốt!**
+
+### **Bước 6: Kiểm tra trạng thái Admin**
+```powershell
+Invoke-WebRequest -Uri "http://localhost:5000/api/auth/check-first-admin" -Method GET
+```
+
+### **Bước 7: Test đăng nhập Admin**
+```powershell
+$body = @{email="admin@gmail.com"; password="admin123"} | ConvertTo-Json
+Invoke-WebRequest -Uri "http://localhost:5000/api/auth/admin-login" -Method POST -Body $body -ContentType "application/json"
+```
+✅ **Admin login hoạt động tốt!**
+
+## 🎉 **DỰ ÁN ĐÃ CHẠY THÀNH CÔNG HOÀN TOÀN!**
+
+### 📋 **Thông tin truy cập:**
+
+| Dịch vụ | URL | Trạng thái |
+|---------|-----|-----------|
+| 🌐 **Frontend (Shop)** | http://localhost:3000 | ✅ Hoạt động |
+| ⚙️ **Admin Panel** | http://localhost:3000/admin/login | ✅ Hoạt động |
+| 🔧 **API Backend** | http://localhost:5000 | ✅ Hoạt động |
+| 🏥 **Health Check** | http://localhost:5000/api/health-check | ✅ Hoạt động |
+| 📊 **Network Access** | http://192.168.1.252:3000 | ✅ Có thể truy cập từ máy khác |
+
+### 🛒 **Các trang chính:**
+- **Trang chủ**: http://localhost:3000
+- **Sản phẩm**: http://localhost:3000/products
+- **Đăng nhập user**: http://localhost:3000/login
+- **Dashboard admin**: http://localhost:3000/admin/dashboard
+- **Đăng ký admin mới**: http://localhost:3000/admin/register-first-admin
+
+### 👤 **Tài khoản test:**
+- **Admin**: admin@gmail.com / admin123
+- **User**: Có thể đăng ký mới tại /register
+
 ## 📱 Screenshots
 
 ### Trang chủ
@@ -239,8 +311,8 @@ Dự án này được phân phối dưới MIT License. Xem `LICENSE` để bi�
 - **📧 Email**: phainie03@gmail.com
 - **💻 GitHub**: [@youngestwall](https://github.com/youngestwall)
 - **🔗 Repository**: [shop_fashion](https://github.com/youngestwall/shop_fashion)
-- **🌐 LinkedIn**: [Phai Nguyen](https://linkedin.com/in/youngestwall) *(nếu có)*
-- **📱 Phone/Zalo**: *+84 xxx xxx xxx* *(có thể thêm nếu muốn)*
+- **🌐 LinkedIn**: [Phai Nguyen](https://www.linkedin.com/in/ypn-phai-351079294/)
+- **📱 Phone/Zalo**: *+84 xxx xxx xxx
 
 ### 💬 Hỗ trợ và phản hồi
 
